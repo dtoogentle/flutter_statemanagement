@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 class FirstProviderEdit extends StatefulWidget {
   final TaskData taskData;
+  //The taskIndex allows the widget to know which task the user intends to edit.
   final int taskIndex;
   const FirstProviderEdit({
     super.key,
@@ -67,7 +68,11 @@ class _FirstProviderEditState extends State<FirstProviderEdit> {
                   taskTitle: tasktitleController.text,
                   taskDescription: taskDescriptionController.text,
                 );
-                taskdataProvider.updateTask(widget.taskIndex, updatedTask);
+                taskdataProvider.updateTask(
+                  //The taskIndex allows the widget to know which task the user intends to edit.
+                  widget.taskIndex, 
+                  updatedTask
+                );
                 Navigator.pop(context);
 
                 //clear
