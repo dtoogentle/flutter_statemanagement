@@ -33,6 +33,7 @@ class _FirstProviderExampleState extends State<FirstProviderExample> {
                     MaterialPageRoute(
                       builder: (context) => FirstProviderEdit(
                         taskData: item,
+                        //The taskIndex allows the widget to know which task the user intends to edit.
                         taskIndex: index,
                       ),
                     ),
