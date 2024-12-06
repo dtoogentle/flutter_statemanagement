@@ -10,8 +10,8 @@ class FirstProviderAdd extends StatefulWidget {
 }
 
 class _FirstProviderAddState extends State<FirstProviderAdd> {
-   final tasktitleController = TextEditingController();
-  final taskDescriptionController  = TextEditingController();
+ TextEditingController tasktitleController = TextEditingController();
+ TextEditingController  taskDescriptionController  = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +48,7 @@ class _FirstProviderAddState extends State<FirstProviderAdd> {
                 taskdataProvider.add(addTask);
                 Navigator.pop(context);
 
+                //clear
                 tasktitleController.clear();
                 taskDescriptionController.clear();
               },

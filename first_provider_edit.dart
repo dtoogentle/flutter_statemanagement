@@ -17,8 +17,8 @@ class FirstProviderEdit extends StatefulWidget {
 }
 
 class _FirstProviderEditState extends State<FirstProviderEdit> {
-  late TextEditingController tasktitleController;
-  late TextEditingController taskDescriptionController;
+  TextEditingController tasktitleController = TextEditingController();
+  TextEditingController taskDescriptionController = TextEditingController();
 
   @override
   void initState() {
@@ -63,16 +63,14 @@ class _FirstProviderEditState extends State<FirstProviderEdit> {
             const SizedBox(height: 20.0),
             TextButton(
               onPressed: () {
-                //taskdataProvider.updateTask(widget.index, updatedTask);
-                final updatedTask = TaskData(
+                final editTask = TaskData(
                   taskTitle: tasktitleController.text,
                   taskDescription: taskDescriptionController.text,
                 );
-                taskdataProvider.updateTask(
-                  //The taskIndex allows the widget to know which task the user intends to edit.
-                  widget.taskIndex, 
-                  updatedTask
-                );
+                taskdataProvider.edit(
+                    //The taskIndex allows the widget to know which task the user intends to edit.
+                    widget.taskIndex,
+                    editTask);
                 Navigator.pop(context);
 
                 //clear
